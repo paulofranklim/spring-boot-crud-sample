@@ -1,0 +1,5 @@
+insert into tbl_users (id, login, name) values (1, 'user1', 'Nombre Usuario 1')
+insert into tbl_users (id, login, name) values (2, 'user2', 'Nombre Usuario 2')
+insert into tbl_users (id, login, name) values (3, 'user3', 'Nombre Usuario 3')
+insert into tbl_users (id, login, name) values (4, 'user4', 'Nombre Usuario 4')
+insert into tbl_users (id, login, name) values (5, 'user5', 'Nombre Usuario 5')
