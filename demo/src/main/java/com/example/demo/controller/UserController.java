@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.Users;
+import com.example.demo.entity.User;
 import com.example.demo.service.UserServices;
 
 @RestController
@@ -16,16 +16,16 @@ public class UserController {
 	@Autowired
 	private UserServices service;
 	
-	@GetMapping(value = "/user/{login}")
-	public Users helloWorld(@PathVariable(name = "login") String login) {
+	@GetMapping(value = "/user/{id}")
+	public User methodGet(@PathVariable(name = "id") Long id) {
 		
-		Users user = service.get(login);
+		User user = service.get(id);
 		
 		return user;
 	}
 	
 	@PostMapping(value = "/user")
-	public Users methodPost(@RequestBody Users user) {
+	public User methodPost(@RequestBody User user) {
 		
 		user = service.save(user);
 		

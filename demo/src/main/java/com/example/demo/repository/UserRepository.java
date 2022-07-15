@@ -4,13 +4,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.Users;
+import com.example.demo.entity.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<Users, Long>{
+public interface UserRepository extends JpaRepository<User, Long> {
 
-	@Query("select u From Users u where u.login = ?1")
-	public Users findUserByLogin(String login);
-	
-	public Users findByLogin(String login);
+	//Both methods have the same result
+    @Query("select u From User u where u.login = ?1")
+    public User findUserByMyCustomQueryMethod(String login);
+
+    public User findByLogin(String login);
+
 }
